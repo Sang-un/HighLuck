@@ -12,7 +12,7 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("/hello/dto")
+    @GetMapping("/hello/dto") // localhost:8080/hello/dto?name=test&amount=123
     public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount) {
         return new HelloResponseDto(name, amount);
     }
