@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor // lombok
 @Entity // jpa
-        // Entity class 에서 절대로 setter 함수를 만들지 않는다.
-        // setter 로 값을 바꾸지 않고 새로운 함수를 만들어서 바꾼다.
+// Entity class 에서 절대로 setter 함수를 만들지 않는다.
+// setter 로 값을 바꾸지 않고 새로운 함수를 만들어서 바꾼다.
 public class Posts {
     @Id // Primary Key(=PK)필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
@@ -29,5 +29,10 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
