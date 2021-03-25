@@ -28,6 +28,7 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2') // test 용 메모리에 올라가기때문에 초기화됨
+    compile('org.springframework.boot:spring-boot-starter-mustache')
 
 }
 
