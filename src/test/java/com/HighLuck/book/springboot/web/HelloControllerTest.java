@@ -1,4 +1,4 @@
-package com.HighLuck.book.springboot;
+package com.HighLuck.book.springboot.web;
 
 
 import com.HighLuck.book.springboot.config.auth.SecurityConfig;
