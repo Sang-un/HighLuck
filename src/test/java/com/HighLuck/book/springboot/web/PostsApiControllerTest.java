@@ -3,8 +3,8 @@ package com.HighLuck.book.springboot.web;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.HighLuck.book.springboot.domain.posts.Posts;
 import com.HighLuck.book.springboot.domain.posts.PostsRepository;
-import com.HighLuck.book.springboot.web.dto.PostsUpdateRequestDto;
 import com.HighLuck.book.springboot.web.dto.PostsSaveRequestDto;
+import com.HighLuck.book.springboot.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,7 +63,7 @@ public class PostsApiControllerTest {
 
     // WebMvcTest 는 jpa 기능이 작동하지 않기 때문에 사용하지 않음 따라서 위에 testRestTemplate 와 SpringBootTest 사용
     @Test
-    @WithMockUser(roles = "USER")
+    @WithMockUser(roles="USER")
     public void Posts_등록된다() throws Exception {
         //given
         String title = "title";
@@ -89,7 +89,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "USER")
+    @WithMockUser(roles="USER")
     public void Posts_수정된다() throws Exception {
         //given
         Posts savedPosts = postsRepository.save(Posts.builder()
