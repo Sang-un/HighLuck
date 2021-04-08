@@ -5,19 +5,28 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Getter
-@NoArgsConstructor // lombok
-@Entity // jpa
+
 // Entity class 에서 절대로 setter 함수를 만들지 않는다.
 // setter 로 값을 바꾸지 않고 새로운 함수를 만들어서 바꾼다.
+@Getter
+@NoArgsConstructor
+@Entity
 public class Posts extends BaseTimeEntity {
-    @Id // Primary Key(=PK)필드
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
-    private Long id; // pk 는 보통 long type 으로 사용
+    // Primary Key(=PK)필드
+    // auto increment
+    // pk 는 보통 long type 으로 사용
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(length = 500, nullable = false) // table column 의 값을 정의하기 위해서 (안써도됨)
+    // table column 의 값을 정의하기 위해서 (안써도됨)
+    @Column(length = 500, nullable = false)
     private String title;
 
     @Column(columnDefinition = "TEXT", nullable = false)
