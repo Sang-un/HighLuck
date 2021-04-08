@@ -20,7 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //@WebMvcTest(controllers = HelloController.class) // controller 위주의 webMVC에 집중하게 하는 어노테이션
-@RunWith(SpringRunner.class)// 스프링부트와 JUnit 사이에 연결자 역할
+// 스프링부트와 JUnit 사이에 연결자 역할
+@RunWith(SpringRunner.class)
 @WebMvcTest(controllers = HelloController.class,
         excludeFilters = {
                 @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
@@ -39,8 +40,9 @@ public class HelloControllerTest {
         String hello = "hello";
         // MockMvc를 통해 /hello 주소로 http get 요청을 함
         // 체이닝이 지원되어 아래와 같이 여러 검증 기능을 이어서 선언 가능
+        // 결과를 검증, 200인지 검증
         mvc.perform(get("/hello"))
-                .andExpect(status().isOk())         // 결과를 검증, 200인지 검증
+                .andExpect(status().isOk())
                 .andExpect(content().string(hello));        // hello로 결과를 받는지 아닌지 검사
     }
 
